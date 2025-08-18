@@ -19,5 +19,11 @@
         <p>This is some HTML text.</p>
         <p>Another <?php echo "awesome" ?> line of text.</p>
     <?php } ?>
+
+    <?php 
+    //declaring a variable
+    $greeting = "Hello, User!";
+    echo $greeting;
+    ?>
 </body>
 </html>
