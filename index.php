@@ -17,6 +17,7 @@
     ?>
     <?php if (true) {?>
         <p>This is some HTML text.</p>
+        <p>Another <?php echo "awesome" ?> line of text.</p>
     <?php } ?>
 </body>
 </html>
