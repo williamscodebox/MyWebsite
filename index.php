@@ -8,7 +8,15 @@
 <body>
     <p>Welcome to My Website</p>
     <?php
+    // Here we output a string into the browser
+    /*    This is a multi-line comment.
+        It can span multiple lines. */
+    if(true) {
     echo "Hello, World!";
+}
     ?>
+    <?php if (true) {?>
+        <p>This is some HTML text.</p>
+    <?php } ?>
 </body>
 </html>
