@@ -45,6 +45,37 @@
               echo "<p>Both numbers must be numeric.</p>";
               $errors = true;
        }
+
+       // Perform calculation if no errors
+       if (!$errors) {
+           switch ($operator) {
+               case 'add':
+                   $result = $num01 + $num02;
+                   break;
+               case 'subtract':
+                   $result = $num01 - $num02;
+                   break;
+               case 'multiply':
+                   $result = $num01 * $num02;
+                   break;
+               case 'divide':
+                   if ($num02 == 0) {
+                       echo "<p>Cannot divide by zero.</p>";
+                       $errors = true;
+                   } else {
+                       $result = $num01 / $num02;
+                   }
+                   break;
+               default:
+                   echo "<p>Invalid operator selected.</p>";
+                   $errors = true;
+           }
+
+           // Output result if no errors
+           if (!$errors) {
+               echo "<p>Result: " . htmlspecialchars($result) . "</p>";
+           }
+       }
     }
 
     ?>
