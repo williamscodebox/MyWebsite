@@ -8,6 +8,10 @@
 <body>
 
 <?php
+$fruits = ["apple", "banana", "cherry"];
+foreach ($fruits as $fruit) {
+    echo "<p>" . ucfirst($fruit) . "</p>";
+}
 
 ?>
     
