@@ -35,6 +35,11 @@
        // Error handling
 
        $errors = false;
+
+       if (empty($num01) || empty($num02) || empty($operator)) {
+           echo "<p>Please fill in all fields.</p>";
+           $errors = true;
+       }
     }
 
     ?>
