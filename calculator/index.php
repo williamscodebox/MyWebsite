@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+            <input type="number" name="num01" placeholder="Number one" required>
+
+        </form>
+    </div>
     
 </body>
 </html>
