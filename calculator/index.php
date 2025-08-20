@@ -15,7 +15,8 @@
                 <option value="multiply">*</option>
                 <option value="divide">/</option>
             </select>
-
+            <input type="number" name="num02" placeholder="Number two" required>
+            <button type="submit">Calculate</button>
         </form>
     </div>
     
