@@ -13,6 +13,16 @@ foreach ($fruits as $fruit) {
     echo "<p>" . ucfirst($fruit) . "</p>";
 }
 
+$tasks = [
+    ["laundry" => "Daniel", "completed" => true],
+    ["trash" => "Bella", "completed" => false],
+    ["dishes" => "Freddy", "completed" => true],
+];
+
+if ($tasks[1]["completed"] === false) {
+    echo "<p>" . $tasks[1]["trash"] . " needs to take out the trash.</p>";
+}
+
 ?>
     
 </body>
