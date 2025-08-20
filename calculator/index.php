@@ -7,7 +7,7 @@
 </head>
 <body>
     <div>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <input type="number" name="num01" placeholder="Number one" required>
             <select name="operator">
                 <option value="add">+</option>
@@ -19,6 +19,13 @@
             <button type="submit">Calculate</button>
         </form>
     </div>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       echo "<script>console.log('PHP Log: input submitted');</script>";
+    }
+
+    ?>
     
 </body>
 </html>
