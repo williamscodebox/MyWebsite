@@ -40,6 +40,11 @@
            echo "<p>Please fill in all fields.</p>";
            $errors = true;
        }
+         
+       if (!is_numeric($num01) || !is_numeric($num02)) {
+              echo "<p>Both numbers must be numeric.</p>";
+              $errors = true;
+       }
     }
 
     ?>
