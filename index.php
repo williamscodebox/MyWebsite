@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php
+    $string = "Hello, World!";
+    echo strlen($string);
+    echo "<br>";
+    echo strpos($string, "World");
+    echo "<br>";
+    echo str_replace("World", "PHP", $string);
+    ?>
 </body>
 </html>
