@@ -24,6 +24,9 @@ if ($tasks[1]["completed"] === false) {
 }
 
 print_r($tasks);
+echo "<br>";
+echo "<br>";
+echo count($tasks);
 
 ?>
     
