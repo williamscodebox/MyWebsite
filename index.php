@@ -23,6 +23,8 @@ if ($tasks[1]["completed"] === false) {
     echo "<p>" . $tasks[1]["trash"] . " needs to take out the trash.</p>";
 }
 
+print_r($tasks);
+
 ?>
     
 </body>
