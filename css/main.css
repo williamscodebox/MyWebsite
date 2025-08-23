@@ -1,20 +1,25 @@
 .main {
   margin: auto;
-  margin-top: 20px;
-  width: 40%;
-  border: 3px solid #73ad21;
+  margin-top: 160px;
+  /* width: 40%; */
+  width: 210px;
+  /* border: 3px solid #73ad21; */
   border-radius: 10px;
   padding: 10px;
-  gap: 5px;
+  gap: 10px;
 }
 
 .input {
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   margin: 5px 0;
-  placeholder-color: #999;
+  /* placeholder-color: #999; */
   border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
+}
+.input::placeholder {
+  color: #7b6b6b;
 }
 
 .button {
@@ -30,13 +35,15 @@
 }
 
 button {
-  background-color: rgb(72, 158, 219);
+  background-color: rgb(88, 183, 223);
+  /* background-color: rgb(202, 239, 255); */
+  /* color: rgb(26, 26, 26); */
   color: white;
-  padding: 10px 20px;
+  padding: 5px 16px;
   display: block;
   margin: 10px auto;
   margin-bottom: 0px;
-  border: none;
+  border: #c3d1db solid 1px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -45,6 +52,9 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: #4caf50 solid 2px; */
-  padding: 5px;
+  border: #c3d1db solid 1px;
+  /* background-color: #d7f4ff; */
+  border-radius: 10px;
+  padding: 10px;
+  /* padding-top: 5px; */
 }
