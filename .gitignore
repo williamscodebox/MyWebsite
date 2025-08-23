@@ -1,4 +1,3 @@
 tutorial.txt
 .git
-dbh.inc.php
-includes/dbh.inc.php
+includes/dbh_inc.php
