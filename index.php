@@ -19,6 +19,25 @@
             <button type="submit" name="submit">Sign Up</button>
         </form>
         </div>
+        <div class="div">
+        <!-- <h3 class="pb-1" >Update Account</h3> -->
+       
+        <form action="includes/userupdate.inc.php" method="post">
+            <input class="input" type="text" name="username" placeholder="Username"><br>
+            <input class="input" type="password" name="pwd" placeholder="Password"><br>
+            <input class="input" type="text" name="email" placeholder="E-Mail"><br>
+            <button type="submit" name="submit">Update</button>
+        </form>
+        </div>
+        <div class="div">
+        <!-- <h3 class="pb-1" >Selete Account</h3> -->
+       
+        <form action="includes/userdelete.inc.php" method="post">
+            <input class="input" type="text" name="username" placeholder="Username"><br>
+            <input class="input" type="password" name="pwd" placeholder="Password"><br>
+            <button type="submit" name="submit">Delete</button>
+        </form>
+        </div>
     </main>
 </body>
 </html>
