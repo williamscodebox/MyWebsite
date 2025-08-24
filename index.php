@@ -9,7 +9,7 @@
 </head>
 <body>
     <main class="main flex flex-col items-center justify-center">
- <div class="div">
+        <div class="div">
         <!-- <h3 class="pb-1" >Signup</h3> -->
        
         <form action="includes/formhandler.inc.php" method="post">
