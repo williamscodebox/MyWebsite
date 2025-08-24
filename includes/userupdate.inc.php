@@ -10,6 +10,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once 'dbh_inc.php';
        
         $query = "UPDATE users SET username = :username, pwd = :pwd, email = :email WHERE id = 5;";
+        // Must change the id above to the id of the user you want to update
+        // In a real application, you would typically get this from the session
         $stmt = $conn->prepare("$query");
 
         $stmt->bindParam(':username', $username);
