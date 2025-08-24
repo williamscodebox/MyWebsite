@@ -20,8 +20,9 @@
             <button type="submit" name="submit">Search</button>
         </form>
         </div>
-</div>
-        <div class="main flex flex-col items-center justify-center">
+    </div>
+        
+    <div class="main flex flex-col items-center justify-center">
 
         <div class="div">
         <!-- <h3 class="pb-1" >Signup</h3> -->
@@ -52,8 +53,9 @@
             <button type="submit" name="submit">Delete</button>
         </form>
         </div>
-</div>
-<div class="main flex flex-col items-center justify-center">
+    </div>
+
+    <div class="main flex flex-col items-center justify-center">
         <div class="div">
         <!-- <h3 class="pb-1" >Search Account</h3> -->
        
@@ -63,8 +65,9 @@
             <button type="submit" name="submit">Search</button>
         </form>
         </div>
-</div>
-<div class="main flex flex-col items-center justify-center">
+    </div>
+
+    <div class="main flex flex-col items-center justify-center">
         <div class="div">
         <!-- <h3 class="pb-1" >Search Account</h3> -->
        
@@ -74,7 +77,8 @@
             <button type="submit" name="submit">Search</button>
         </form>
         </div>
-</div>
+    </div>
+    
     </main>
 </body>
 </html>
