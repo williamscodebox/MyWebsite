@@ -1,5 +1,5 @@
 .main {
-  margin: auto;
+  /* margin: auto; */
 
   /* width: 40%; */
   /* width: 210px; */
@@ -10,11 +10,11 @@
 }
 
 .page {
-  margin: auto;
+  /* margin: auto; */
   margin-top: 10px;
   margin-bottom: 20px;
   height: 100vh;
-  /* width: 40%; */
+  width: 100%;
   /* width: 210px; */
   /* border: 3px solid #73ad21; */
   border-radius: 10px;
@@ -65,7 +65,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: #c3d1db solid 1px;
+  /* border: #c3d1db solid 1px; */
   /* background-color: #d7f4ff; */
   border-radius: 10px;
   padding: 10px;

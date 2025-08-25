@@ -21,9 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn = null;
         $stmt = null;
 
-
-        die();
-
         } catch (PDOException $e) {
             die("Error: " . $e->getMessage());
         }
@@ -38,29 +35,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="css/search.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Document</title>
 </head>
 <body>
-    <main class="page flex flex-row items-center justify-around">
+    <main class="page flex flex-col items-center justify-between">
         
-    <div class="main flex flex-col items-center justify-center">
+    <div class="main flex flex-col justify-center">
         <div class="div">
-        <h3 class="pb-1" >Search Results</h3>
+        <h3 class="pb-1 font-bold" >Search Results</h3>
        
         <?php
             if (!empty($results)) {
+                // var_dump($results);
                 foreach ($results as $row) {
                     echo "<p>Username: " . htmlspecialchars($row['username']) . "</p>";
-                    echo "<p>Comment: " . htmlspecialchars($row['comment']) . "</p>";
-                    echo "<hr>";
+                    echo "<p>Comment: " . htmlspecialchars($row['comment_text']) . "</p>";
+                    echo "<hr class='my-2 border-t border-gray-300 w-full'>";
                 }
+            } else if (empty($userSearch)) {
+                echo "<p>No results found</p>";
             } else {
                 echo "<p>No results found for '" . htmlspecialchars($userSearch) . "'</p>";
             }
         ?>
         </div>
-    </div>
+       
+    </div> 
+    <div class="div border border-gray-300 ">
+            <a href="index.php">Go Back</a>
+        </div>
 
     </main>
     
