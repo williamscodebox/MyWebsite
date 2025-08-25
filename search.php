@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     <div class="main flex flex-col justify-center">
         <div class="div">
-        <h3 class="pb-1 font-bold" >Search Results</h3>
+        <h3 class="pb-5 font-bold text-lg" >Search Results</h3>
        
         <?php
             if (!empty($results)) {
