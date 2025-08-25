@@ -64,9 +64,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
        
     </div> 
+    
     <div class="div border border-gray-300 ">
-            <a href="index.php">Go Back</a>
-        </div>
+        <a href="index.php">Go Back</a>
+    </div>
 
     </main>
     
