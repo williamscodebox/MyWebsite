@@ -1,35 +1,26 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $username = $_POST['username'];
-    $pwd = $_POST['pwd'];  
-    $email = $_POST['email'];
+    $userSearch = $_POST['usersearch'];
 
     try {
-        require_once 'dbh_inc.php';
-        // with unnamed placeholders
-        // $query = "INSERT INTO users (username, pwd, email) VALUES (?, ?, ?);";
-        // $stmt = $conn->prepare("$query");
-        // $stmt->execute([$username, $pwd, $email]);
-
-        // $stmt->execute([$username, $pwd, $email]);
-
-        // with named placeholders
-        $query = "INSERT INTO users (username, pwd, email) VALUES (:username, :pwd, :email);";
+        require_once 'includes/dbh_inc.php';
+      
+        $query = "SELECT * FROM comments WHERE username = :usersearch;";
         $stmt = $conn->prepare("$query");
 
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':pwd', $pwd); 
-        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':usersearch', $userSearch);
+        
         
         $stmt->execute();
+
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         // code continues here
 
         $conn = null;
         $stmt = null;
 
-        header("Location: ../index.php");
 
         die();
 
@@ -51,8 +42,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Document</title>
 </head>
 <body>
+    <main class="page flex flex-row items-center justify-around">
+        
+    <div class="main flex flex-col items-center justify-center">
+        <div class="div">
+        <h3 class="pb-1" >Search Results</h3>
+       
+        <?php
+            if (!empty($results)) {
+                foreach ($results as $row) {
+                    echo "<p>Username: " . htmlspecialchars($row['username']) . "</p>";
+                    echo "<p>Comment: " . htmlspecialchars($row['comment']) . "</p>";
+                    echo "<hr>";
+                }
+            } else {
+                echo "<p>No results found for '" . htmlspecialchars($userSearch) . "'</p>";
+            }
+        ?>
+        </div>
+    </div>
 
-
+    </main>
     
 </body>
 </html>
