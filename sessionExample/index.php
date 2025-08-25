@@ -1,7 +1,8 @@
 <?php
-session_start();
+require_once "config.php";
+// session_start();
 
-$_SESSION['username'] = "JohnDoe";
+// $_SESSION['username'] = "JohnDoe";
 ?>
 
 <!DOCTYPE html>
