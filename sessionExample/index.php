@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$_SESSION['username'] = "JohnDoe";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +17,9 @@
 <main class="page flex flex-row items-center justify-around">
     
     <div class="main flex flex-col items-center justify-center">
-        <div class="div">
-        <!-- <h3 class="pb-1" >Search Account</h3> -->
-       
-        <form action="search.php" method="post">
-            <label for="search">Search for user:</label><br>
-            <input class="input" id="search" type="text" name="usersearch" placeholder="Search..."><br>
-            <button type="submit" name="submit">Search</button>
-        </form>
+      <?php
+      echo "Session is set for user: " . $_SESSION['username'];
+      ?>
         </div>
     </div>
 </main>    
