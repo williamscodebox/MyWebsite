@@ -10,3 +10,11 @@ function is_input_empty(...$inputs): bool {
     }
     return false;
 }
+
+function is_email_invalid($email): bool {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return true;
+    } else {
+        return false;
+    }
+}

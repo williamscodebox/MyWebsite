@@ -14,7 +14,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         // Error handlers
 
         if (is_input_empty($username, $pwd, $email) !== false) {
-            throw new Exception("Empty input");
+            throw new Exception("Empty Input");
+        }
+        
+        if (is_email_invalid($email) !== false) {
+            throw new Exception("Invalid Email");
         }
 
     } catch (Exception $e) {
