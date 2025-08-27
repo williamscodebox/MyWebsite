@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function is_input_empty(...$inputs): bool {
+function is_input_empty(string ...$inputs): bool {
     foreach ($inputs as $input) {
         if (empty(trim($input))) {
             return true;
@@ -11,10 +11,14 @@ function is_input_empty(...$inputs): bool {
     return false;
 }
 
-function is_email_invalid($email): bool {
+function is_email_invalid(string $email): bool {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return true;
     } else {
         return false;
     }
+}
+
+function is_username_taken(object $pdo, string $username): bool {
+    return (bool ) get_username($pdo, $username);
 }

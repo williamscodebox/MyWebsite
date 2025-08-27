@@ -13,13 +13,20 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // Error handlers
 
-        if (is_input_empty($username, $pwd, $email) !== false) {
+        if (is_input_empty($username, $pwd, $email)) {
             throw new Exception("Empty Input");
         }
         
-        if (is_email_invalid($email) !== false) {
+        if (is_email_invalid($email)) {
             throw new Exception("Invalid Email");
         }
+
+        if (is_username_taken($pdo, $username)) {
+            throw new Exception("Username already exists");
+        }
+
+         header("location: ../index.php");
+    die();
 
     } catch (Exception $e) {
         $errorMessage = $e->getMessage();
