@@ -28,12 +28,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         if (uidExists($conn, $username, $email) !== false) {
             throw new Exception("Username or email already taken");
         }
+        
     } catch (Exception $e) {
         $errorMessage = $e->getMessage();
         die("Query failed: " . $errorMessage);
     }
 
-    createUser($conn, $username, $pwd, $email);
 } else {
     header("location: ../index.php");
     die();
