@@ -25,6 +25,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
             throw new Exception("Username already exists");
         }
 
+        if (is_email_registered($pdo, $email)) {
+            throw new Exception("Account already exists with this email");
+        }
+
          header("location: ../index.php");
     die();
 
