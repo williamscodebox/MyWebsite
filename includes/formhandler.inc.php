@@ -19,8 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = "INSERT INTO users (username, pwd, email) VALUES (:username, :pwd, :email);";
         $stmt = $conn->prepare("$query");
 
+        // Hashing the password before storing it in the database
+        
+        $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT, ['cost' => 12]);
+
         $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':pwd', $pwd); 
+        $stmt->bindParam(':pwd', $hashedPwd); 
         $stmt->bindParam(':email', $email);
         
         $stmt->execute();
