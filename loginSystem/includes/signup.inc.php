@@ -7,28 +7,16 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST['email'];
 
     try {
-        require_once 'dbh.inc.php';
+        require_once 'dbh_inc.php';
         require_once 'signup_model.inc.php';
         require_once 'signup_contr.inc.php';
 
         // Error handlers
 
-        if (emptyInputSignup($username, $pwd, $email) !== false) {
+        if (is_input_empty($username, $pwd, $email) !== false) {
             throw new Exception("Empty input");
         }
 
-        if (invalidUid($username) !== false) {
-            throw new Exception("Invalid username");
-        }
-
-        if (invalidEmail($email) !== false) {
-            throw new Exception("Invalid email");
-        }
-
-        if (uidExists($conn, $username, $email) !== false) {
-            throw new Exception("Username or email already taken");
-        }
-        
     } catch (Exception $e) {
         $errorMessage = $e->getMessage();
         die("Query failed: " . $errorMessage);
