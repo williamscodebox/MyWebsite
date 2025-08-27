@@ -22,6 +22,6 @@ function is_email_invalid(string $email): bool {
 function is_username_taken(object $pdo, string $username): bool {
     return (bool) get_username($pdo, $username);
 }
-function is_email_registered(object $pdo, string $enail): bool {
+function is_email_registered(object $pdo, string $email): bool {
     return (bool) get_email($pdo, $email);
 }
