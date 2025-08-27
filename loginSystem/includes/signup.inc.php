@@ -13,20 +13,26 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 
         // Error handlers
 
+        $errors = [];
+
         if (is_input_empty($username, $pwd, $email)) {
-            throw new Exception("Empty Input");
+            $errors["empty_input"] = "Fill in all fields";
+            // throw new Exception("Empty Input");
         }
         
         if (is_email_invalid($email)) {
-            throw new Exception("Invalid Email");
+            $errors["email_invalid"] = "Invalid Email";
+            // throw new Exception("Invalid Email");
         }
 
         if (is_username_taken($pdo, $username)) {
-            throw new Exception("Username already exists");
+            $errors["username_taken"] = "Username already exists";
+            // throw new Exception("Username already exists");
         }
 
         if (is_email_registered($pdo, $email)) {
-            throw new Exception("Account already exists with this email");
+            $errors["email_taken"] = "Account already exists with this email";
+            // throw new Exception("Account already exists with this email");
         }
 
          header("location: ../index.php");
