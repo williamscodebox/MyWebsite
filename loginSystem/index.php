@@ -1,3 +1,7 @@
+<?php
+require_once 'includes/signup_view.inc.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +28,11 @@
         <input class="input m-2" type="text" name="email" placeholder="E-Mail">
         <button class="button m-2" type="submit" name="submit">Sign Up</button>
     </form>
+
+    <?php
+    check_signup_errors();
+    ?>
+
     
 </body>
 </html>

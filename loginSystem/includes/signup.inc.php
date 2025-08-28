@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         }
         
         if (is_email_invalid($email)) {
-            $errors["email_invalid"] = "Invalid Email";
+            $errors["email_invalid"] = "Invalid Email used";
             // throw new Exception("Invalid Email");
         }
 
@@ -35,7 +35,13 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
             // throw new Exception("Account already exists with this email");
         }
 
-         header("location: ../index.php");
+        require_once 'config_session_inc.php';
+
+        if ($errors) {
+            $_SESSION["errors_signup"] = $errors;
+            header("location: ../index.php");
+        }
+
     die();
 
     } catch (Exception $e) {
