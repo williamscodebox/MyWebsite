@@ -1,4 +1,5 @@
 <?php
+require_once 'includes/config_session_inc.php';
 require_once 'includes/signup_view.inc.php';
 ?>
 

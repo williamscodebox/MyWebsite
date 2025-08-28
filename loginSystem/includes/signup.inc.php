@@ -42,6 +42,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
             header("location: ../index.php");
         }
 
+        create_user();
+
     die();
 
     } catch (Exception $e) {
