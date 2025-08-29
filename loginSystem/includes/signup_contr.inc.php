@@ -25,3 +25,7 @@ function is_username_taken(object $pdo, string $username): bool {
 function is_email_registered(object $pdo, string $email): bool {
     return (bool) get_email($pdo, $email);
 }
+
+function create_user(object $pdo, string $username, string $pwd, string $email): void {
+    set_user($pdo, $username, $pwd, $email);
+}

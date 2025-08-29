@@ -12,5 +12,8 @@ function check_signup_errors(): void {
             echo '<p class="text-center text-red-500">' . htmlspecialchars($error) . '</p>';
         }
         unset($_SESSION["errors_signup"]);
+    } else if (isset($_GET["signup"]) && $_GET["signup"] === "success") {
+        echo "<br>";
+        echo '<p class="text-center text-green-500">Signup successful!</p>';
     }
 }

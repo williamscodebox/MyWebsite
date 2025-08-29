@@ -40,11 +40,19 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         if ($errors) {
             $_SESSION["errors_signup"] = $errors;
             header("location: ../index.php");
+            $pdo = null;
+            $stmt = null;
+            die();
         }
 
-        create_user();
+        create_user($pdo, $username, $pwd, $email);
+        
+        header("location: ../index.php?signup=success");
 
-    die();
+        $pdo = null;
+        $stmt = null;
+
+        die();
 
     } catch (Exception $e) {
         $errorMessage = $e->getMessage();
