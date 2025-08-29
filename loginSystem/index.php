@@ -24,9 +24,12 @@ require_once 'includes/signup_view.inc.php';
     <h3 class="text-center p-4">Signup</h3>
 
     <form action="includes/signup.inc.php" method="post" class="flex flex-col items-center justify-center">
-        <input class="input m-2" type="text" name="username" placeholder="Username">
+        <?php
+        signup_inputs();
+        ?>
+        <!-- <input class="input m-2" type="text" name="username" placeholder="Username">
         <input class="input m-2" type="password" name="pwd" placeholder="Password">
-        <input class="input m-2" type="text" name="email" placeholder="E-Mail">
+        <input class="input m-2" type="text" name="email" placeholder="E-Mail"> -->
         <button class="button m-2" type="submit" name="submit">Sign Up</button>
     </form>
 
