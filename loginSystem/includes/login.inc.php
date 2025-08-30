@@ -20,20 +20,25 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         }
 
         $user = get_user($pdo, $username);
+        // error_log(print_r($user["pwd"], true));
+
+        echo "<script>console.log(" . json_encode($user) . ");</script>";
+
+        
 
         if (is_username_wrong($user)) {
             $errors["login_incorrect"] = "Incorrect login info";
             // throw new Exception("login incorrect");
         }
             
-        if (is_username_wrong($user) && is_password_wrong($pwd, $user["pwd"])) {
+        if (is_username_wrong($user) || is_password_wrong($pwd, $user["pwd"])) {
                  $errors["login_incorrect"] = "Incorrect login info";
             } 
 
         require_once 'config_session_inc.php';
 
         if ($errors) {
-            $_SESSION["errors_signup"] = $errors;
+            $_SESSION["errors_login"] = $errors;
           
             header("location: ../index.php");
             $pdo = null;
@@ -50,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         
         $_SESSION['last_regeneration'] = time();
 
-        header("location: ../login.php?login=success");
+        header("location: ../index.php?login=success");
 
         $pdo = null;
         $stmt = null;
