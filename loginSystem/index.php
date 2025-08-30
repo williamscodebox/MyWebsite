@@ -14,6 +14,13 @@ require_once 'includes/login_view.inc.php';
     <title>Document</title>
 </head>
 <body>
+    <h3 class="text-center p-4 mt-60">
+        <?php 
+        output_username(); 
+        ?>
+    </h3>
+
+
     <h3 class="text-center p-4">Login</h3>
 
     <form action="includes/login.inc.php" method="post" class="flex flex-col items-center justify-center">
@@ -40,7 +47,13 @@ require_once 'includes/login_view.inc.php';
 
     <?php
     check_signup_errors();
-    ?>
+    ?>    
+    
+    <h3 class="text-center p-4">Logout</h3>
+
+    <form action="includes/logout.inc.php" method="post" class="flex flex-col items-center justify-center mb-20">
+        <button class="button m-2" type="submit" name="submit">Logout</button>
+    </form>
 
     
 </body>

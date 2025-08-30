@@ -2,6 +2,14 @@
 
 declare(strict_types=1);
 
+function output_username(): void {
+    if (isset($_SESSION["user_id"])) {
+        echo 'You are logged in as "' . htmlspecialchars($_SESSION["username"]) . '"';
+    }else {
+        echo 'You are not logged in';
+    }
+}
+
 function check_login_errors(): void {
     // session_start();
 
