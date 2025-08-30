@@ -20,6 +20,8 @@ require_once 'includes/login_view.inc.php';
         ?>
     </h3>
 
+    <?php
+    if (!isset($_SESSION["user_id"])) { ?>
 
     <h3 class="text-center p-4">Login</h3>
 
@@ -28,6 +30,10 @@ require_once 'includes/login_view.inc.php';
         <input class="input m-2" type="password" name="pwd" placeholder="Password">
         <button class="button m-2" type="submit" name="submit">Login</button>
     </form>
+
+    <?php
+    }
+    ?>
 
     <?php
     check_login_errors();
